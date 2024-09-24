@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belfegor <3</title>
+  <title>Belfegorlight</title>
+  <link rel="icon" type="image/png" href="icon.gif">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -104,7 +105,45 @@
 </div>
   <div class="relogio" id="relogio"></div>
   <div class="data" id="data"></div>
+  <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; text-align: center;">
+    <p style="color: #fff; animation: rainbow 2s infinite, pulsar 1s infinite;">>Meu discord: Belfegorlight</p>
+    <p style="color: #fff; animation: rainbow 2s infinite, pulsar 1s infinite;">>Bem-vindo ao meu cantinho</p>
+  </div>
+  <style>
+    @keyframes rainbow {
+      0% {
+        color: #ff0000;
+      }
+      20% {
+        color: #ffff00;
+      }
+      40% {
+        color: #00ff00;
+      }
+      60% {
+        color: #0000ff;
+      }
+      80% {
+        color: #ff00ff;
+      }
+      100% {
+        color: #ff0000;
+      }
+    }
+    @keyframes pulsar {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
   <script>
+
     function atualizarRelogio() {
       const relogio = document.getElementById('relogio');
       const data = document.getElementById('data');
