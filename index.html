@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belfegor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://wallpaperaccess.com/full/775171.gif');
+      background-size: cover;
+      background-color: #000; 
+      height: 100vh; 
+      margin: 0; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 48px;
+      animation: rainbow 2s infinite, pulsar 1s infinite; 
+      user-select: none;
+    }
+    h1:hover {
+      animation: rainbow 2s infinite;
+    }
+    @keyframes rainbow {
+      0% {
+        color: #ff0000; 
+      }
+      20% {
+        color: #ffff00; 
+      }
+      40% {
+        color: #00ff00; 
+      }
+      60% {
+        color: #0000ff; 
+      }
+      80% {
+        color: #ff00ff; 
+      }
+      100% {
+        color: #ff0000; 
+      }
+    }
+    @keyframes pulsar {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .button {
+      background-color: rgba(255, 255, 255, 0.1); 
+      color: #fff; 
+      border: none; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      cursor: pointer; 
+      display: inline-block; 
+      margin: 10px;
+      border-radius: 10px; 
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); 
+      backdrop-filter: blur(20px); 
+      transition: all 0.3s ease-in-out; 
+    }
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.3); 
+      box-shadow: 0 0 30px rgba(0, 0, 0, 1); 
+      transform: scale(1.1); 
+    }
+    .relogio {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 24px;
+      color: #fff;
+      animation: rainbow 2s infinite; 
+    }
+    .data {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #fff;
+      animation: rainbow 2s infinite; 
+    }
+  </style>
+</head>
+<body>
+  <h1>Belfegor ama vocês</h1>
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <button class="button" onclick="window.location.href='https://taplink.cc/belfegorlight';">Redes Sociais</button>
+    <button class="button" onclick="window.location.href='https://theneverland.xyz/';" style="margin-left: 10px;">Neverland</button>
+  </div>
+  <div class="relogio" id="relogio"></div>
+  <div class="data" id="data"></div>
+  <script>
+    function atualizarRelogio() {
+      const relogio = document.getElementById('relogio');
+      const data = document.getElementById('data');
+      const agora = new Date();
+      const horas = agora.getHours();
+      const minutos = agora.getMinutes();
+      const segundos = agora.getSeconds();
+      const dia = agora.getDate();
+      const mes = agora.getMonth() + 1;
+      const ano = agora.getFullYear();
+      relogio.textContent = `${horas}:${minutos}:${segundos}`;
+      data.textContent = `${dia}/${mes}/${ano}`;
+    }
+    atualizarRelogio();
+    setInterval(atualizarRelogio, 1000);
+  </script>
+</body>
+</html>
