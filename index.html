@@ -5,240 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Belfegorlight</title>
   <link rel="icon" type="image/png" href="icon.gif">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <style>
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-image: url('https://wallpaperaccess.com/full/775171.gif');
       background-size: cover;
-      background-color: #000; 
-      height: 100vh; 
-      margin: 0; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
+      background-color: #000;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
+      color: #fff;
     }
+
     h1 {
-      font-size: 48px;
-      animation: rainbow 2s infinite, pulsar 1s infinite; 
+      font-size: 3rem;
+      animation: rainbow 2s infinite, pulsar 1s infinite;
       user-select: none;
+      margin-bottom: 20px;
     }
-    h1:hover {
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+      transform: scale(1.1);
+    }
+
+    .info-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .info-container p {
+      margin: 5px 0;
+      animation: rainbow 2s infinite, pulsar 1s infinite;
+    }
+
+    .relogio, .data {
+      position: absolute;
+      top: 20px;
+      font-size: 1.2rem;
       animation: rainbow 2s infinite;
     }
-    @keyframes rainbow {
-      0% {
-        color: #ff0000; 
-      }
-      20% {
-        color: #ffff00; 
-      }
-      40% {
-        color: #00ff00; 
-      }
-      60% {
-        color: #0000ff; 
-      }
-      80% {
-        color: #ff00ff; 
-      }
-      100% {
-        color: #ff0000; 
-      }
-    }
-    @keyframes pulsar {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    .button {
-      background-color: rgba(255, 255, 255, 0.1); 
-      color: #fff; 
-      border: none; 
-      padding: 10px 20px; 
-      font-size: 16px; 
-      cursor: pointer; 
-      display: inline-block; 
-      margin: 10px;
-      border-radius: 10px; 
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); 
-      backdrop-filter: blur(20px); 
-      transition: all 0.3s ease-in-out; 
-    }
-    .button:hover {
-      background-color: rgba(255, 255, 255, 0.3); 
-      box-shadow: 0 0 30px rgba(0, 0, 0, 1); 
-      transform: scale(1.1); 
-    }
+
     .relogio {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 24px;
-      color: #fff;
-      animation: rainbow 2s infinite; 
+      left: 20px;
     }
+
     .data {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      color: #fff;
-      animation: rainbow 2s infinite; 
+      right: 20px;
     }
-    @media (max-width: 1920px) {
-      h1 {
-        font-size: 48px;
-      }
-      .button {
-        font-size: 16px;
-        padding: 10px 20px;
-      }
-      .relogio, .data {
-        font-size: 24px;
-      }
+
+    @keyframes rainbow {
+      0% { color: #ff0000; }
+      20% { color: #ffff00; }
+      40% { color: #00ff00; }
+      60% { color: #0000ff; }
+      80% { color: #ff00ff; }
+      100% { color: #ff0000; }
     }
-    @media (max-width: 1600px) {
-      h1 {
-        font-size: 42px;
-      }
-      .button {
-        font-size: 14px;
-        padding: 8px 16px;
-      }
-      .relogio, .data {
-        font-size: 22px;
-      }
+
+    @keyframes pulsar {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
-    @media (max-width: 1366px) {
-      h1 {
-        font-size: 36px;
-      }
-      .button {
-        font-size: 12px;
-        padding: 6px 12px;
-      }
-      .relogio, .data {
-        font-size: 20px;
-      }
-    }
-    @media (max-width: 1024px) {
-      h1 {
-        font-size: 30px;
-      }
-      .button {
-        font-size: 10px;
-        padding: 4px 8px;
-      }
-      .relogio, .data {
-        font-size: 18px;
-      }
-    }
+
     @media (max-width: 768px) {
       h1 {
-        font-size: 24px;
+        font-size: 2rem;
       }
+
       .button {
-        font-size: 8px;
-        padding : 2px 4px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
       }
+
       .relogio, .data {
-        font-size: 16px;
+        font-size: 1rem;
+      }
+
+      .info-container {
+        font-size: 0.9rem;
       }
     }
+
     @media (max-width: 480px) {
       h1 {
-        font-size: 18px;
+        font-size: 1.5rem;
       }
+
       .button {
-        font-size: 6px;
-        padding: 1px 2px;
+        padding: 8px 16px;
+        font-size: 0.8rem;
       }
+
       .relogio, .data {
-        font-size: 14px;
+        font-size: 0.9rem;
       }
-    }
-    @media (max-width: 320px) {
-      h1 {
-        font-size: 12px;
-      }
-      .button {
-        font-size: 4px;
-        padding: 0.5px 1px;
-      }
-      .relogio, .data {
-        font-size: 12px;
+
+      .info-container {
+        font-size: 0.8rem;
       }
     }
   </style>
 </head>
 <body>
   <h1>Belfegorlight</h1>
-  <div style="display: flex; justify-content: center; margin-top: 20px;">
-    <button class="button" onclick="window.location.href='https://taplink.cc/belfegorlight';">Redes Sociais</button>
-    <button class="button" onclick="window.location.href='https://theneverland.xyz/';" style="margin-left: 10px;">Neverland</button>
-    <button class="button" onclick="window.location.href='https://api.whatsapp.com/send/?phone=351969118248';" style="margin-left: 10px;">WhatsApp</button>
-    <button class="button" onclick="window.location.href='J.html';" style="margin-left: 10px;">countdown</button>
-    <button class="button" onclick="window.location.href='https://t.me/belfegorlight';" style="margin-left: 10px;">Telegram</button>
-    <button class="button" onclick="window.location.href='https://www.youtube.com/@Belfegordc';" style="margin-left: 10px;">YouTube</button>
+  <div class="button-container">
+    <a href="https://taplink.cc/belfegorlight" class="button">Redes Sociais</a>
+    <a href="https://theneverland.xyz/" class="button">Neverland</a>
+    <a href="https://api.whatsapp.com/send/?phone=351969118248" class="button">WhatsApp</a>
+    <a href="J.html" class="button">Countdown</a>
+    <a href="https://t.me/belfegorlight" class="button">Telegram</a>
+    <a href="https://www.youtube.com/@Belfegordc" class="button">YouTube</a>
   </div>
   <div class="relogio" id="relogio"></div>
   <div class="data" id="data"></div>
-  <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; text-align: center;">
-    <p style="color: #fff; animation: rainbow 2s infinite, pulsar 1s infinite;">>Meu discord: Belfegorlighttt</p>
-    <p style="color: #fff; animation: rainbow 2s infinite, pulsar 1s infinite;">>Signal: @Belfegor.22</p>
-    <p style="color: #fff; animation: rainbow 2s infinite, pulsar 1s infinite;">>Belfegordc@disroot.org</p>
+  <div class="info-container">
+    <p>Meu discord: Belfegorlighttt</p>
+    <p>Signal: @Belfegor.22</p>
+    <p>Belfegordc@disroot.org</p>
   </div>
-  <style>
-    @keyframes rainbow {
-      0% {
-        color: #ff0000;
-      }
-      20% {
-        color: #ffff00;
-      }
-      40% {
-        color: #00ff00;
-      }
-      60% {
-        color: #0000ff;
-      }
-      80% {
-        color: #ff00ff;
-      }
-      100% {
-        color: #ff0000;
-      }
-    }
-    @keyframes pulsar {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-  </style>
   <script>
-
     function atualizarRelogio() {
       const relogio = document.getElementById('relogio');
       const data = document.getElementById('data');
       const agora = new Date();
-      const horas = agora.getHours();
-      const minutos = agora.getMinutes();
-      const segundos = agora.getSeconds();
-      const dia = agora.getDate();
-      const mes = agora.getMonth() + 1;
+      const horas = String(agora.getHours()).padStart(2, '0');
+      const minutos = String(agora.getMinutes()).padStart(2, '0');
+      const segundos = String(agora.getSeconds()).padStart(2, '0');
+      const dia = String(agora.getDate()).padStart(2, '0');
+      const mes = String(agora.getMonth() + 1).padStart(2, '0');
       const ano = agora.getFullYear();
       relogio.textContent = `${horas}:${minutos}:${segundos}`;
       data.textContent = `${dia}/${mes}/${ano}`;
